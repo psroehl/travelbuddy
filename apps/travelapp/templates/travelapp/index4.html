@@ -1,0 +1,23 @@
+<body>
+        <a href="/logout">logout</a>
+        <h3>Show Title</h3>
+        {{ts.title}}
+        <P>Network:</P>
+        {{ ts.Destination }}
+        <p>Release Date:</p>
+        {{ ts.Start_date}}
+        <p>Description</p>
+        {{ ts.End_date }}
+        <p>Created:</p>
+        {{ ts.Plan }}
+        <p>Modified</p>
+        {{ ts.updated_at }}
+    
+        <a href="/dashboard">dashboard</a>
+       
+        <a href="/edittrip/{{ts.id}}">Edit</a>
+        
+        <a href="/destroy/{{ts.id}}">Delete</a>
+       
+    
+    </body>

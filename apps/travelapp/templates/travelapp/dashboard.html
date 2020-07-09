@@ -1,0 +1,17 @@
+<body>
+        <a href="/logout">logout</a>
+        <h1>Travel</h1>
+        {%for x in travel %}
+        <p>{{ x.Destination }}</p>
+        <p>{{ x.id }}</p>
+        <p>{{ x.Plan}}</p>
+        <p>{{ x.Start_date}}</p>
+        <p>{{ x.End_date}}</p>
+        <a href="/edittrip/{{x.id}}">Edit</a>
+        <a href="/details/{{x.id}}">Show</a>
+        <a href="/destroy/{{x.id}}">Delete</a>
+        {% endfor %}
+        <a href="/create">Add New</a>
+    </body>
+    
+    

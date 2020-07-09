@@ -1,0 +1,21 @@
+{% if messages %}
+        <ul class="messages">    
+            {% for message in messages %}    
+                <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+<form action= "/edittemp/{{travel.id}}" method="POST">
+    {% csrf_token %}
+    <h1> Trip</h1>
+    <h3>Destination</h3>
+    <input type="text" name="Destination">
+    <h3>Start Date</h3>
+    <input type="Date" name="Start_date">
+    <h3>End Date</h3>
+    <input type="Date" name="End_date">
+    <h3>Plan</h3>
+    <textarea name="Plan"></textarea>
+    <input type="Submit" value="Submit">
+</form>

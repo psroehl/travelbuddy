@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <meta charset="utf-8">
+      <title>Index</title>
+      {% load static %}
+      <link rel="stylesheet" href="{% static 'restful_app/css/style.css' %}">    
+      <script src="{% static 'restful_app/js/script.js' %}"></script>
+    </head>
+{% if messages %}
+    <ul class="messages">    
+        {% for message in messages %}    
+            <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    
+    <body>
+        <form action= "/reg" method="POST">
+        {% csrf_token %}
+        <h1> Register</h1>
+        <h3>First Name</h3>
+        <input type="text" name="Fname">
+        <h3>Last Name</h3>
+        <input type="text" name="Lname">
+        <h3>Email</h3>
+        <input type="text" name="Email">
+        <h3>Password</h3>
+        <input type="password" name="Password">
+        <h3>Confirm Password</h3>
+        <input type="password" name="Confirm">
+        <input type="Submit" value="Register">
+        </form>
+
+        
+        <form action= "/login" method="POST">
+        {% csrf_token %}
+        <h1>Login</h1>
+        <h3>Email</h3>
+        <input type="text" name="Email">
+        <h3>Password</h3>
+        <input type="password" name="Password">
+        <input type="Submit" value="Login">
+        </form>
+</body>
+
+
+ 
